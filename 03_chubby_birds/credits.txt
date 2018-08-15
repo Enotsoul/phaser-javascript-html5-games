@@ -1,0 +1,9 @@
+
+Copyright CyberPro Software
+Programming: Andrei Clinciu
+Art Assets: http://www.kenney.nl 
+Bird Assets: http://bevouliin.com/
+Sounds: http://soundbible.com/
+Music:Nurykabe
+http://ccmixter.org/files/Nurykabe/10176
+/home/lostone/Projects/GameDevelopment/audio/nurykabe/ogg2/Ten-Josai-01.ogg

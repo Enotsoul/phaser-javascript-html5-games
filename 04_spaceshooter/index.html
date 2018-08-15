@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Space Destiny</title>
+	<script src="../phaser.js"></script>
+	<script src="../../specials/localforage.min.js"></script>
+	<script src="../../specials/cyberpro.js"></script>
+	<script src="./js/Boot.js"></script>
+	<script src="./js/Preloader.js"></script>
+	<script src="./js/MainMenu.js"></script>
+	<script src="./js/Game.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<style>
+@font-face {
+    font-family: kenvector_future_thin;
+    src: url(assets/Bonus/kenvector_future_thin.ttf);
+}
+</style>
+<script type="text/javascript">
+
+window.onload = function() {
+
+	//	100% of the browser window - see Boot.js for additional configuration
+	//Canvas seems to be faster in firefox & chrome 
+	//MULTItEXTURE COULD BE DISABLED
+//	var device = new Device ();
+
+var device = Phaser.Device;
+console.log("Device " + device.android);
+	var config = {
+	//	width :640,
+	//	height:960,
+		width :"100%",
+		height:"100%",
+		renderer: device.android  || device.iOS ? Phaser.CANVAS: Phaser.AUTO,
+		    multiTexture: true
+	}
+		var game = new Phaser.Game(config);
+	//var game = new Phaser.Game(360,640, Phaser.AUTO, '');
+
+	//	Add the States your game has.
+	//	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
+	game.state.add('Boot', SpaceDestiny.Boot);
+	game.state.add('Preloader', SpaceDestiny.Preloader);
+	game.state.add('MainMenu', SpaceDestiny.MainMenu);
+	game.state.add('Game', SpaceDestiny.Game);
+
+	//	Now start the Boot state.
+	game.state.start('Boot');
+
+};
+
+</script>
+
+</body>
+</html>
